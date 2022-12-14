@@ -1,5 +1,8 @@
 <template>
-  <div class="flex flex-row justify-center flex-wrap border-gray-400">
+  <div class="container px-24 text-2xl text-white" v-if="loading">
+    loading...
+  </div>
+  <div class="flex flex-row justify-center flex-wrap border-gray-400" v-else>
     <games-app v-for="item in pages[currentPage]" :key="item.id" :item="item" />
   </div>
 </template>
@@ -14,9 +17,10 @@ export default {
   data() {
     return {
       datas: [],
-      currentPage: 6,
-      itemPerPage: 8,
       pages: [],
+      loading: true,
+      currentPage: 0,
+      itemPerPage: 8,
       totalPages: null,
     };
   },
@@ -31,21 +35,11 @@ export default {
             this.datas.slice(i * this.itemPerPage, (i + 1) * this.itemPerPage)
           );
         }
-        console.log(this.pages);
+        this.loading = false;
       })
       .catch(function (error) {
         console.error(error);
       });
-  },
-
-  methods: {
-    setPage(page) {
-      this.currentPage = page;
-    },
-
-    prev(page) {
-      this.currentPage = page;
-    },
   },
 };
 </script>
