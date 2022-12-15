@@ -1,5 +1,6 @@
 <template>
   <header
+    v-if="pubRoutes"
     class="bg-stone-400 container mx-auto rounded-b-full pt-0 text-white mb-12"
   >
     <nav class="bg-stone-700">
@@ -125,6 +126,21 @@
   <RouterView />
 </template>
 
-<script setup>
-import { RouterLink, RouterView } from "vue-router";
+<script>
+// import { RouterLink, RouterView } from "vue-router";
+
+export default {
+  data() {
+    return {
+      routes: ["home", "about"],
+      links: false,
+    };
+  },
+
+  computed: {
+    pubRoutes() {
+      return this.routes.includes(this.$route.name);
+    },
+  },
+};
 </script>

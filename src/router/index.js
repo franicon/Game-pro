@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 // COMPONENT DIR
 import Home from "@/views/Home.vue";
 import About from "@/views/About.vue";
+import GameDetails from "@/components/GameDetails.vue";
 
 const routes = [
   {
@@ -14,6 +15,11 @@ const routes = [
     path: "/about",
     name: "about",
     component: About,
+  },
+  {
+    path: "/details",
+    name: "details",
+    component: GameDetails,
   },
   {
     path: "/:catachAll(.*)*",
