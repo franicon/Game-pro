@@ -7,7 +7,7 @@
   </div>
 </template>
 <script>
-import { getAxios } from "@/provider/axios";
+import { getAxios } from "/provider/axios";
 import GamesApp from "@/components/Games.vue";
 
 export default {
