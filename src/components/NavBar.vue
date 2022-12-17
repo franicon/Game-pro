@@ -1,6 +1,6 @@
 <template>
   <header
-    v-if="pubRoutes"
+    v-show="userNav"
     class="bg-stone-400 container mx-auto rounded-b-full pt-0 text-white mb-12"
   >
     <nav class="bg-stone-700">
@@ -126,7 +126,16 @@
 </template>
 
 <script>
+import { mapWritableState } from "pinia";
+import useNavbarStore from "@/stores/navbar";
+
 export default {
   name: "NavBar",
+  computed: {
+    ...mapWritableState(useNavbarStore, ["userNavbar"]),
+    userNav() {
+      return this.userNavbar.includes(this.$route.name);
+    },
+  },
 };
 </script>
