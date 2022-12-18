@@ -1,6 +1,6 @@
 <template>
   <div
-      class="xl:basis-1/5 md:basis-4/12 mr-4 relative mb-6 mt-6 shadow-2xl shadow-stone-400 rounded-lg border-amber-100 cursor-default grayscale hover:grayscale-0">
+      class=" xl:basis-1/5 md:basis-4/12 relative mb-6 mt-6 mx-4 transition-all duration-1000 shadow-2xl shadow-stone-400 rounded-lg border-amber-100 cursor-default">
     <img :src="`${item.thumbnail}`" alt="" class="rounded-t-lg w-screen"/>
 
     <div class="text-xs text-justify pt-2 bg-stone-50 p-2 w-full rounded-b-lg border-red-500">
