@@ -1,4 +1,6 @@
 <template>
+
+  <!--  Banner-->
   <div class="w-full h-screen relative overflow-hidden"
        style=" background-image: url(assets/img/god-of-war.webp); background-position: center; background-size: cover; background-repeat: no-repeat;">
     <div
@@ -10,10 +12,15 @@
       </p>
     </div>
   </div>
+
+  <!--  Loader-->
   <div v-if="loading" class="container px-24 text-2xl text-black">loading...</div>
-  <div v-else class="flex flex-row justify-center flex-wrap">
+
+  <!--  Games-->
+  <div v-else class="flex flex-row justify-center items-center flex-wrap">
     <games-app v-for="item in pages[currentPage]" :key="item.id" :item="item"/>
   </div>
+
 </template>
 <script>
 import {getAxios} from "/provider/axios";
