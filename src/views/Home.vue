@@ -1,11 +1,10 @@
 <template>
 
   <!--  Banner-->
-  <div class="w-full h-screen relative overflow-hidden"
+  <div class="w-full h-96 p-96 relative overflow-hidden"
        style=" background-image: url(assets/img/god-of-war.webp); background-position: center; background-size: cover; background-repeat: no-repeat;">
     <div
         class="text-black bg-slate-900 text-white text-xl sm:w-1/2 h-fit m-auto absolute inset-0 text-center py-36 bg-opacity-75 shadow-2xl rounded ">
-      <h1 class="font-normal text-7xl font-mono uppercase">Game~Pro</h1>
       <p class="font-normal text-2xl pt-10 sm:px-24 pt-2">Explore a generation of critically-acclaimed games, including
         blockbuster console exclusive games from PlayStation Studios,
         immersive PS VR titles, and innovative indies.
@@ -14,7 +13,9 @@
   </div>
 
   <!--  Loader-->
-  <div v-if="loading" class="container px-24 text-2xl text-black">loading...</div>
+  <div v-if="loading" class=" transition-all duration-500 m-4 text-2xl text-white absolute top-0 right-0 font-sans ">
+    <p class="text-sm">Processing...</p>
+  </div>
 
   <!--  Games-->
   <div v-else class="flex flex-row justify-center items-center flex-wrap">
